@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title Crucible &middot; Secure Memorable Password Machine 
+    %meta{:content => "Crucible - Secure Memorable Password Generator", :name => "description"}
+    %meta{:content => "Jon Anning", :name => "author"}
+    %meta{:name => "viewport", :content=>"width=device-width, initial-scale=1"}
+    %link{:href => "/css/bootstrap.css", :type => "text/css", :rel => "stylesheet" }
+    %link{:href => "/css/sticky-footer.css", :type => "text/css", :rel => "stylesheet" }
+  %body
+    #wrap
+      .container
+        .page-header
+          %h1 CRUCIBLE
+        %h4= @movie.to_s
+        %h2= make_password(@movie)
+    #footer
+      .container
+        %p.text-muted.credit!= "Designed and built with <i class='icon-heart'></i> by <a href='http://twitter.com/astromoose'>@astromoose</a>"
