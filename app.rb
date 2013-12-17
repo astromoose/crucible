@@ -5,6 +5,7 @@ set :haml, :format => :html5
 
 configure do
 	set :datafile, 'us-uk-films.txt'
+  set :nonalpha, ["!", "@", "#", "$", "%", "^", "*", "(", ")", "-", "+", "="]
 end
 
 helpers do
@@ -16,7 +17,7 @@ helpers do
 	def make_password(string)
 		words = string.split(" ").select { |v| v=~ /[A-Za-z]{5,}/ }
 		if words.count == 2
-			return words[0].downcase.gsub(/[^a-z\s]/, '').capitalize + Random.rand(101..999).to_s + words[1].downcase.gsub(/[^a-z\s]/, '').capitalize
+			return words[0].downcase.gsub(/[^a-z\s]/, '').capitalize + Random.rand(101..999).to_s + words[1].downcase.gsub(/[^a-z\s]/, '').capitalize + settings.nonalpha.sample.to_s
 		else
 			redirect "/"
 		end

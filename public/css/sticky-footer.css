@@ -1,10 +1,17 @@
-/* Sticky footer styles
+/* Sticky footer styles and the rest, I'm bored
 -------------------------------------------------- */
 
 html,
 body {
   height: 100%;
+  background-image: url("/images/debut_light.png");
+  font-family: 'Junge', serif;
   /* The html and body elements cannot have any padding or margin. */
+}
+
+.page-header {
+  padding-top: 40px;
+  border-bottom: none;
 }
 
 /* Wrapper for page content to push down footer */
